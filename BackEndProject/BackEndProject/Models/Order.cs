@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace BackEndProject.Models
@@ -13,8 +14,9 @@ namespace BackEndProject.Models
         public OrderStatus OrderStatus { get; set; }
 
         public string UserId { get; set; }
+        [NotMappedAttribute]
         public User User { get; set; }
-
+        [NotMappedAttribute]
         public List<OrderItem> OrderItems { get; set; }
     }
 

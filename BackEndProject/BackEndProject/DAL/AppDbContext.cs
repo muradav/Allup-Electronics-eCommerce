@@ -1,5 +1,6 @@
 ﻿using BackEndProject.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace BackEndProject.DAL
 {
@@ -20,6 +21,14 @@ namespace BackEndProject.DAL
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<TagProduct> TagProducts { get; set; }
+        public DbSet<Bio> Bios { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<DeliveryBan> DeliveryBans { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+
+
+        
 
     }
 }
