@@ -4,14 +4,16 @@ using BackEndProject.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackEndProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220724183714_addDatasWithSeed")]
+    partial class addDatasWithSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,18 +101,6 @@ namespace BackEndProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Bios");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Contact = "+123 456 789",
-                            Email = "email@yourwebsitename.com",
-                            ImageUrl = "images/logo.png",
-                            Location = "45 Grand Central Terminal New York,NY 1017 United State USA",
-                            SupportContact = "+994553470880",
-                            WorkTime = "Mon-Sat 9:00pm - 5:00pm Sun:Closed"
-                        });
                 });
 
             modelBuilder.Entity("BackEndProject.Models.Blog", b =>
@@ -142,7 +132,7 @@ namespace BackEndProject.Migrations
                             Id = 1,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-1.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(5893),
+                            Time = new DateTime(2022, 7, 24, 22, 37, 13, 688, DateTimeKind.Local).AddTicks(6052),
                             Title = "This is first blog"
                         },
                         new
@@ -150,7 +140,7 @@ namespace BackEndProject.Migrations
                             Id = 2,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-2.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7591),
+                            Time = new DateTime(2022, 7, 24, 22, 37, 13, 688, DateTimeKind.Local).AddTicks(6904),
                             Title = "This is second blog"
                         },
                         new
@@ -158,7 +148,7 @@ namespace BackEndProject.Migrations
                             Id = 3,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-3.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7787),
+                            Time = new DateTime(2022, 7, 24, 22, 37, 13, 688, DateTimeKind.Local).AddTicks(6980),
                             Title = "This is third blog"
                         },
                         new
@@ -166,7 +156,7 @@ namespace BackEndProject.Migrations
                             Id = 4,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-4.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7895),
+                            Time = new DateTime(2022, 7, 24, 22, 37, 13, 688, DateTimeKind.Local).AddTicks(7028),
                             Title = "This is fourth blog"
                         });
                 });
@@ -204,7 +194,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 107, DateTimeKind.Local).AddTicks(9173),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 682, DateTimeKind.Local).AddTicks(2632),
                             ImageUrl = "images/brand/brand-1.jpg",
                             IsDeleted = false,
                             Name = "Nokia"
@@ -212,7 +202,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(2424),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(6716),
                             ImageUrl = "images/brand/brand-2.jpg",
                             IsDeleted = false,
                             Name = "Apple"
@@ -220,7 +210,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(2930),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(6969),
                             ImageUrl = "images/brand/brand-3.jpg",
                             IsDeleted = false,
                             Name = "HTC"
@@ -228,7 +218,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3056),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7050),
                             ImageUrl = "images/brand/brand-4.jpg",
                             IsDeleted = false,
                             Name = "Xioami"
@@ -236,7 +226,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3162),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7105),
                             ImageUrl = "images/brand/brand-5.jpg",
                             IsDeleted = false,
                             Name = "Hoffmann"
@@ -244,7 +234,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3284),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7169),
                             ImageUrl = "images/brand/brand-6.jpg",
                             IsDeleted = false,
                             Name = "Delonghi"
@@ -252,7 +242,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3380),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7218),
                             ImageUrl = "images/brand/brand-1.jpg",
                             IsDeleted = false,
                             Name = "Gorenji"
@@ -260,7 +250,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3474),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7268),
                             ImageUrl = "images/brand/brand-2.jpg",
                             IsDeleted = false,
                             Name = "Toshiba"
@@ -268,7 +258,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3566),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7316),
                             ImageUrl = "images/brand/brand-4.jpg",
                             IsDeleted = false,
                             Name = "HP"
@@ -276,7 +266,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3670),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 685, DateTimeKind.Local).AddTicks(7369),
                             ImageUrl = "images/brand/brand-3.jpg",
                             IsDeleted = false,
                             Name = "Dell"
@@ -319,7 +309,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(6265),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(6402),
                             ImageUrl = "images/category-2.jpg",
                             IsDeleted = false,
                             Name = "Computer"
@@ -327,7 +317,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(9512),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8196),
                             ImageUrl = "images/category-1.jpg",
                             IsDeleted = false,
                             Name = "Laptop",
@@ -336,7 +326,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(9767),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8337),
                             ImageUrl = "images/category-3.jpg",
                             IsDeleted = false,
                             Name = "Smartphone"
@@ -344,7 +334,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(500),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8393),
                             ImageUrl = "images/category-4.jpg",
                             IsDeleted = false,
                             Name = "Game Consoles"
@@ -352,7 +342,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(682),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8443),
                             ImageUrl = "images/category-5.jpg",
                             IsDeleted = false,
                             Name = "Bottoms"
@@ -360,7 +350,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(949),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8501),
                             ImageUrl = "images/category-6.jpg",
                             IsDeleted = false,
                             Name = "Tops & Sets"
@@ -368,7 +358,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(1046),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8549),
                             ImageUrl = "images/category-7.jpg",
                             IsDeleted = false,
                             Name = "Audio & Video"
@@ -376,7 +366,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(1355),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8618),
                             ImageUrl = "images/category-10.jpg",
                             IsDeleted = false,
                             Name = "Camera",
@@ -385,7 +375,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7367),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8674),
                             ImageUrl = "images/category-9.jpg",
                             IsDeleted = false,
                             Name = "Household"
@@ -393,7 +383,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7538),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8727),
                             ImageUrl = "images/category-8.jpg",
                             IsDeleted = false,
                             Name = "Accessories"
@@ -401,7 +391,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7636),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8793),
                             ImageUrl = "images/category-11.jpg",
                             IsDeleted = false,
                             Name = "Michrophone",
@@ -410,7 +400,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7724),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8844),
                             ImageUrl = "images/category-12.jpg",
                             IsDeleted = false,
                             Name = "Video Games",
@@ -419,7 +409,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7809),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 686, DateTimeKind.Local).AddTicks(8893),
                             ImageUrl = "images/category-1.jpg",
                             IsDeleted = false,
                             Name = "Technologics"
@@ -602,7 +592,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 10,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 115, DateTimeKind.Local).AddTicks(527),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(133),
                             DiscountPrice = 30.0,
                             InStock = true,
                             IsDeleted = false,
@@ -619,7 +609,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 5,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 115, DateTimeKind.Local).AddTicks(9808),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6229),
                             DiscountPrice = 30.0,
                             InStock = true,
                             IsDeleted = false,
@@ -636,7 +626,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(251),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6431),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -653,7 +643,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 2,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(392),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6496),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -670,7 +660,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 2,
                             CategoryId = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(500),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6556),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -687,7 +677,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 1,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(663),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6621),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -704,7 +694,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 3,
                             CategoryId = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(809),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6680),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -721,7 +711,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 6,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(944),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6737),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -738,7 +728,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 7,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(1047),
+                            CreatedAt = new DateTime(2022, 7, 24, 22, 37, 13, 687, DateTimeKind.Local).AddTicks(6794),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
