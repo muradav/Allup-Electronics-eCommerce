@@ -34,6 +34,7 @@ namespace Allup.DAL
         public DbSet<Comment> Comments { get; set; }
         public DbSet<WishList> WishLists { get; set; }
         public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -45,7 +46,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 1,
-                    Name = "Adidas",
+                    Name = "Nokia",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-1.jpg",
                 });
@@ -54,7 +55,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 2,
-                    Name = "Samsung",
+                    Name = "Apple",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-2.jpg",
                 });
@@ -63,7 +64,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 3,
-                    Name = "Asus",
+                    Name = "HTC",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-3.jpg",
                 });
@@ -72,7 +73,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 4,
-                    Name = "Philips",
+                    Name = "Xioami",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-4.jpg",
                 });
@@ -81,7 +82,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 5,
-                    Name = "Sony",
+                    Name = "Hoffmann",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-5.jpg",
                 });
@@ -90,7 +91,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 6,
-                    Name = "Xiaomi",
+                    Name = "Delonghi",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-6.jpg",
                 });
@@ -99,7 +100,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 7,
-                    Name = "Apple",
+                    Name = "Gorenji",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-1.jpg",
                 });
@@ -108,7 +109,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 8,
-                    Name = "Gucci",
+                    Name = "Toshiba",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-2.jpg",
                 });
@@ -117,7 +118,7 @@ namespace Allup.DAL
                 new Brand
                 {
                     Id = 9,
-                    Name = "Pegasus",
+                    Name = "HP",
                     CreatedAt = DateTime.Now,
                     ImageUrl = "images/brand/brand-4.jpg",
                 });
@@ -126,7 +127,7 @@ namespace Allup.DAL
                new Brand
                {
                    Id = 10,
-                   Name = "Logitech",
+                   Name = "Dell",
                    CreatedAt = DateTime.Now,
                    ImageUrl = "images/brand/brand-3.jpg",
                });
@@ -139,8 +140,8 @@ namespace Allup.DAL
                 new Slider
                 {
                     Id = 1,
-                    Title = "2079 Virtual Reality",
-                    DiscountSec = "Save $666 when you buy",
+                    Title = "2020 Virtual Reality",
+                    DiscountSec = "Save $120 when you buy",
                     Desc = "Explore and immerse in exciting 360 content with Fulldive’s all-in-one virtual reality platform",
                     ImageUrl = "images/slider-1.jpg",
                 });
@@ -149,9 +150,9 @@ namespace Allup.DAL
                 new Slider
                 {
                     Id = 2,
-                    Title = "Et ceken masinnnnn",
-                    DiscountSec = "Mohtesem Companiyyaa Shok shok !!!",
-                    Desc = "Etceken masindan istifade etmekle siz, qessabdan aldiginiz iri tikeleri rahatliqla qiyme halina cevirib dadli kotletler hazirlaya bilersiniz !",
+                    Title = "4K HDR Smart TV 43",
+                    DiscountSec = "Save $120 when you buy",
+                    Desc = "Explore and immerse in exciting 360 content with Fulldive’s all-in-one virtual reality platform",
                     ImageUrl = "images/slider-2.jpg",
                 });
 
@@ -179,21 +180,21 @@ namespace Allup.DAL
             builder.Entity<Category>().HasData(
                new Category
                {
+                   Id = 1,
+                   ImageUrl = "images/category-2.jpg",
+                   IsDeleted = false,
+                   Name = "Computer",
+                   CreatedAt = DateTime.Now,
+               });
+            builder.Entity<Category>().HasData(
+               new Category
+               {
                    Id = 2,
                    ImageUrl = "images/category-1.jpg",
                    ParentId = 1,
                    IsDeleted = false,
                    Name = "Laptop",
                    CreatedAt = DateTime.Now
-               });
-            builder.Entity<Category>().HasData(
-               new Category
-               {
-                   Id = 1,
-                   ImageUrl = "images/category-2.jpg",
-                   IsDeleted = false,
-                   Name = "Computer",
-                   CreatedAt = DateTime.Now,
                });
             builder.Entity<Category>().HasData(
                new Category
@@ -310,7 +311,7 @@ namespace Allup.DAL
                 {
                     Id = 1,
                     CreatedAt = DateTime.Now,
-                    NewArrival =true,
+                    NewArrival = true,
                     InStock = true,
                     BestSeller = false,
                     IsFeatured = false,
@@ -320,7 +321,7 @@ namespace Allup.DAL
                     CategoryId = 4,
                     BrandId = 10,
                     DiscountPrice = 30,
-                    TaxPercent = 0,          
+                    TaxPercent = 0,
                 });
 
             builder.Entity<Product>().HasData(
@@ -332,7 +333,7 @@ namespace Allup.DAL
                     BestSeller = true,
                     IsFeatured = false,
                     InStock = true,
-                    Name = "Qulaqliqs",
+                    Name = "Airpods Pro",
                     Price = 250,
                     StockCount = 30,
                     CategoryId = 10,
@@ -350,7 +351,7 @@ namespace Allup.DAL
                     BestSeller = false,
                     IsFeatured = true,
                     InStock = true,
-                    Name = "Flashcard",
+                    Name = "HDD",
                     Price = 75,
                     StockCount = 25,
                     CategoryId = 10,
@@ -359,7 +360,7 @@ namespace Allup.DAL
                     TaxPercent = 0,
                 });
 
-           
+
             builder.Entity<Product>().HasData(
                 new Product
                 {
@@ -369,7 +370,7 @@ namespace Allup.DAL
                     BestSeller = true,
                     IsFeatured = false,
                     InStock = true,
-                    Name = "Printer (Samsung Yta-55)",
+                    Name = "Printer",
                     Price = 300,
                     StockCount = 25,
                     CategoryId = 7,
@@ -387,7 +388,7 @@ namespace Allup.DAL
                     BestSeller = false,
                     IsFeatured = true,
                     InStock = true,
-                    Name = "Drone",
+                    Name = "Go Pro Max",
                     Price = 3000,
                     StockCount = 9,
                     CategoryId = 13,
@@ -405,7 +406,7 @@ namespace Allup.DAL
                    BestSeller = true,
                    IsFeatured = true,
                    InStock = true,
-                   Name = "Sunglasses",
+                   Name = "Glasses",
                    Price = 99,
                    StockCount = 800,
                    CategoryId = 10,
@@ -422,7 +423,7 @@ namespace Allup.DAL
                    BestSeller = false,
                    IsFeatured = true,
                    InStock = true,
-                   Name = "PhotoAparatte",
+                   Name = "Insta360",
                    Price = 199,
                    StockCount = 75,
                    CategoryId = 13,
@@ -439,7 +440,7 @@ namespace Allup.DAL
                    BestSeller = false,
                    IsFeatured = true,
                    InStock = true,
-                   Name = "Xiaomi mi9t",
+                   Name = "MiPods",
                    Price = 900,
                    StockCount = 75,
                    CategoryId = 3,
@@ -456,7 +457,7 @@ namespace Allup.DAL
                    BestSeller = true,
                    IsFeatured = false,
                    InStock = true,
-                   Name = "Macbook Pro3",
+                   Name = "Zenbook",
                    Price = 5000,
                    StockCount = 39,
                    CategoryId = 2,
@@ -626,14 +627,14 @@ namespace Allup.DAL
 
             #endregion
 
-            #region ShippingBanners
+            #region DeliveryBan
             builder.Entity<ShippingBanner>().HasData(
              new ShippingBanner
              {
                  Id = 1,
                  ImageUrl = "images/banner-icon/icon1.png",
-                 Title = "Pulsuz Dasinmaa",
-                 Desc = "Gotur Apar",
+                 Title = "Free Delivery",
+                 Desc = "Every third product",
              });
 
             builder.Entity<ShippingBanner>().HasData(
@@ -641,24 +642,24 @@ namespace Allup.DAL
               {
                   Id = 2,
                   ImageUrl = "images/banner-icon/icon2.png",
-                  Title = "Ideal Dasinmaa",
-                  Desc = "Hefte ici her axsam"
+                  Title = "Delivery",
+                  Desc = "24/7"
               });
             builder.Entity<ShippingBanner>().HasData(
               new ShippingBanner
               {
                   Id = 3,
                   ImageUrl = "images/banner-icon/icon3.png",
-                  Title = "LIMAK KARGO LTD",
-                  Desc = "Hefte sonu her seher",
+                  Title = "GoturApar Delivery",
+                  Desc = "24hour delivery",
               });
             builder.Entity<ShippingBanner>().HasData(
               new ShippingBanner
               {
                   Id = 4,
                   ImageUrl = "images/banner-icon/icon4.png",
-                  Title = "BALIYEV KARGOS",
-                  Desc = "7/24 en bahali ve en keyfiyyetli dasinma biz beleyik ! ve bundan sonrada beledi belediki !",
+                  Title = "Gelme Getiririk Delivery",
+                  Desc = "Stay at home delivery",
               });
             #endregion
 
@@ -668,8 +669,8 @@ namespace Allup.DAL
                {
                    Id = 1,
                    ImageUrl = "images/blog-1.jpg",
-                   Title = "Bu gun ne alim ?",
-                   Content = "Insana pul geldikce onu nece mehv etmeyi baresinde maraqli ideyalara sahib olmaga bashlayir..",
+                   Title = "This is first blog",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                    Time = DateTime.Now,
                });
             builder.Entity<Blog>().HasData(
@@ -677,8 +678,8 @@ namespace Allup.DAL
                {
                    Id = 2,
                    ImageUrl = "images/blog-2.jpg",
-                   Title = "Dunen ne aldim ?",
-                   Content = "Insana pul geldi ve onu nece mehv etmeyi baresinde maraqli ideyalara sahib olmaga bashladi...",
+                   Title = "This is second blog",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                    Time = DateTime.Now,
                });
             builder.Entity<Blog>().HasData(
@@ -686,8 +687,8 @@ namespace Allup.DAL
                {
                    Id = 3,
                    ImageUrl = "images/blog-3.jpg",
-                   Title = "Sabah ne alim ?",
-                   Content = "Insana pul gelerse onu nece mehv etmeyi baresinde maraqli ideyalara sahib olmaga bashlayacaq..",
+                   Title = "This is third blog",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                    Time = DateTime.Now,
                });
             builder.Entity<Blog>().HasData(
@@ -695,8 +696,8 @@ namespace Allup.DAL
                {
                    Id = 4,
                    ImageUrl = "images/blog-4.jpg",
-                   Title = "Bu umumiyyetle artiq blogdur evvelkilere baxin",
-                   Content = "ARtiq blog ve onun contenti....",
+                   Title = "This is fourth blog",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                    Time = DateTime.Now,
                });
 
@@ -707,29 +708,45 @@ namespace Allup.DAL
                new Testimonial
                {
                    Id = 1,
-                   AuthorName = "Farid",
-                   AuthorEmail = "farid@baliyev.com",
-                   Content = "Cagir ginen dost tanisivi otursun seniynen",
+                   AuthorName = "Murad",
+                   AuthorEmail = "murad@gmail.com",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                    ImageUrl = "images/author-1.png",
                });
             builder.Entity<Testimonial>().HasData(
                new Testimonial
                {
                    Id = 2,
-                   AuthorName = "Takashi",
-                   AuthorEmail = "nakata@mail.ru",
-                   Content = "Vurdun insanlari bir birine",
+                   AuthorName = "Azad",
+                   AuthorEmail = "azad@gmail.ru",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                    ImageUrl = "images/author-2.jpg",
                });
             builder.Entity<Testimonial>().HasData(
                new Testimonial
                {
                    Id = 3,
-                   AuthorName = "Hiroshi",
-                   AuthorEmail = "hiri@mail.ru",
-                   Content = "Bomba kimidi havalar",
+                   AuthorName = "Anar",
+                   AuthorEmail = "anar@gmail.ru",
+                   Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                    ImageUrl = "images/author-3.jpg",
                });
+
+            #endregion
+
+            #region Bio
+            builder.Entity<Bio>().HasData(
+               new Bio
+               {
+                   Id = 1,
+                   ImageUrl = "images/logo.png",
+                   SupportContact = "+994553470880",
+                   Location = "45 Grand Central Terminal New York,NY 1017 United State USA",
+                   Contact = "+123 456 789",
+                   Email = "email@yourwebsitename.com",
+                   WorkTime = "Mon-Sat 9:00pm - 5:00pm Sun:Closed",
+               });
+
 
             #endregion
 

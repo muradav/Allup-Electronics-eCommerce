@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Back-End Project\\Back-End-Project\\Allup\\Allup.csproj": {}
+    "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\Back-End-Project\\Allup\\Allup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Back-End Project\\Back-End-Project\\Allup\\Allup.csproj": {
+    "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\Back-End-Project\\Allup\\Allup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Back-End Project\\Back-End-Project\\Allup\\Allup.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\Back-End-Project\\Allup\\Allup.csproj",
         "projectName": "Allup",
-        "projectPath": "C:\\Users\\User\\Desktop\\Back-End Project\\Back-End-Project\\Allup\\Allup.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Back-End Project\\Back-End-Project\\Allup\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\Back-End-Project\\Allup\\Allup.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\Back-End-Project\\Allup\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,12 +83,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.24, 3.1.24]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -93,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
