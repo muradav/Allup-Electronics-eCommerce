@@ -174,9 +174,6 @@ C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.TagHelpers.input.cache
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.TagHelpers.output.cache
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.RazorCoreGenerate.cache
-C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
-C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
-C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
@@ -198,3 +195,8 @@ C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.dll
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.pdb
 C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Allup.genruntimeconfig.cache
+C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewImports.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\Back-End-Project\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
