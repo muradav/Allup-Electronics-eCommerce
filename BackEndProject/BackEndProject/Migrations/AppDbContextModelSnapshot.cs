@@ -57,16 +57,13 @@ namespace BackEndProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("BasketItems");
                 });
@@ -142,7 +139,7 @@ namespace BackEndProject.Migrations
                             Id = 1,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-1.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(5893),
+                            Time = new DateTime(2022, 7, 27, 1, 7, 13, 574, DateTimeKind.Local).AddTicks(3402),
                             Title = "This is first blog"
                         },
                         new
@@ -150,7 +147,7 @@ namespace BackEndProject.Migrations
                             Id = 2,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-2.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7591),
+                            Time = new DateTime(2022, 7, 27, 1, 7, 13, 574, DateTimeKind.Local).AddTicks(4146),
                             Title = "This is second blog"
                         },
                         new
@@ -158,7 +155,7 @@ namespace BackEndProject.Migrations
                             Id = 3,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-3.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7787),
+                            Time = new DateTime(2022, 7, 27, 1, 7, 13, 574, DateTimeKind.Local).AddTicks(4210),
                             Title = "This is third blog"
                         },
                         new
@@ -166,7 +163,7 @@ namespace BackEndProject.Migrations
                             Id = 4,
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.",
                             ImageUrl = "images/blog-4.jpg",
-                            Time = new DateTime(2022, 7, 25, 23, 26, 28, 117, DateTimeKind.Local).AddTicks(7895),
+                            Time = new DateTime(2022, 7, 27, 1, 7, 13, 574, DateTimeKind.Local).AddTicks(4252),
                             Title = "This is fourth blog"
                         });
                 });
@@ -204,7 +201,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 107, DateTimeKind.Local).AddTicks(9173),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 569, DateTimeKind.Local).AddTicks(309),
                             ImageUrl = "images/brand/brand-1.jpg",
                             IsDeleted = false,
                             Name = "Nokia"
@@ -212,7 +209,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(2424),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8014),
                             ImageUrl = "images/brand/brand-2.jpg",
                             IsDeleted = false,
                             Name = "Apple"
@@ -220,7 +217,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(2930),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8278),
                             ImageUrl = "images/brand/brand-3.jpg",
                             IsDeleted = false,
                             Name = "HTC"
@@ -228,7 +225,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3056),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8327),
                             ImageUrl = "images/brand/brand-4.jpg",
                             IsDeleted = false,
                             Name = "Xioami"
@@ -236,7 +233,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3162),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8368),
                             ImageUrl = "images/brand/brand-5.jpg",
                             IsDeleted = false,
                             Name = "Hoffmann"
@@ -244,7 +241,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3284),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8416),
                             ImageUrl = "images/brand/brand-6.jpg",
                             IsDeleted = false,
                             Name = "Delonghi"
@@ -252,7 +249,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3380),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8455),
                             ImageUrl = "images/brand/brand-1.jpg",
                             IsDeleted = false,
                             Name = "Gorenji"
@@ -260,7 +257,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3474),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8494),
                             ImageUrl = "images/brand/brand-2.jpg",
                             IsDeleted = false,
                             Name = "Toshiba"
@@ -268,7 +265,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3566),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8530),
                             ImageUrl = "images/brand/brand-4.jpg",
                             IsDeleted = false,
                             Name = "HP"
@@ -276,7 +273,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 112, DateTimeKind.Local).AddTicks(3670),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 571, DateTimeKind.Local).AddTicks(8685),
                             ImageUrl = "images/brand/brand-3.jpg",
                             IsDeleted = false,
                             Name = "Dell"
@@ -319,7 +316,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(6265),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(6483),
                             ImageUrl = "images/category-2.jpg",
                             IsDeleted = false,
                             Name = "Computer"
@@ -327,7 +324,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(9512),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(7882),
                             ImageUrl = "images/category-1.jpg",
                             IsDeleted = false,
                             Name = "Laptop",
@@ -336,7 +333,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 113, DateTimeKind.Local).AddTicks(9767),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(7999),
                             ImageUrl = "images/category-3.jpg",
                             IsDeleted = false,
                             Name = "Smartphone"
@@ -344,7 +341,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(500),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8045),
                             ImageUrl = "images/category-4.jpg",
                             IsDeleted = false,
                             Name = "Game Consoles"
@@ -352,7 +349,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(682),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8083),
                             ImageUrl = "images/category-5.jpg",
                             IsDeleted = false,
                             Name = "Bottoms"
@@ -360,7 +357,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(949),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8128),
                             ImageUrl = "images/category-6.jpg",
                             IsDeleted = false,
                             Name = "Tops & Sets"
@@ -368,7 +365,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(1046),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8166),
                             ImageUrl = "images/category-7.jpg",
                             IsDeleted = false,
                             Name = "Audio & Video"
@@ -376,7 +373,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(1355),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8223),
                             ImageUrl = "images/category-10.jpg",
                             IsDeleted = false,
                             Name = "Camera",
@@ -385,7 +382,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7367),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8269),
                             ImageUrl = "images/category-9.jpg",
                             IsDeleted = false,
                             Name = "Household"
@@ -393,7 +390,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7538),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8311),
                             ImageUrl = "images/category-8.jpg",
                             IsDeleted = false,
                             Name = "Accessories"
@@ -401,7 +398,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7636),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8348),
                             ImageUrl = "images/category-11.jpg",
                             IsDeleted = false,
                             Name = "Michrophone",
@@ -410,7 +407,7 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7724),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8385),
                             ImageUrl = "images/category-12.jpg",
                             IsDeleted = false,
                             Name = "Video Games",
@@ -419,11 +416,45 @@ namespace BackEndProject.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 114, DateTimeKind.Local).AddTicks(7809),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(8422),
                             ImageUrl = "images/category-1.jpg",
                             IsDeleted = false,
                             Name = "Technologics"
                         });
+                });
+
+            modelBuilder.Entity("BackEndProject.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UptadetAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("BackEndProject.Models.DeliveryBan", b =>
@@ -499,12 +530,7 @@ namespace BackEndProject.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("Orders");
                 });
@@ -557,6 +583,9 @@ namespace BackEndProject.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Desc")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("DiscountPrice")
                         .HasColumnType("float");
 
@@ -574,6 +603,9 @@ namespace BackEndProject.Migrations
 
                     b.Property<bool>("NewArrival")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("PercentageDiscount")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
@@ -602,7 +634,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 10,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 115, DateTimeKind.Local).AddTicks(527),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 572, DateTimeKind.Local).AddTicks(9647),
                             DiscountPrice = 30.0,
                             InStock = true,
                             IsDeleted = false,
@@ -619,7 +651,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 5,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 115, DateTimeKind.Local).AddTicks(9808),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(4793),
                             DiscountPrice = 30.0,
                             InStock = true,
                             IsDeleted = false,
@@ -636,7 +668,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(251),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5036),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -653,7 +685,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 2,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(392),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5087),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -670,7 +702,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 2,
                             CategoryId = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(500),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5131),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -687,7 +719,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 1,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(663),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5179),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -704,7 +736,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 3,
                             CategoryId = 13,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(809),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5221),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -721,7 +753,7 @@ namespace BackEndProject.Migrations
                             BestSeller = false,
                             BrandId = 6,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(944),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5265),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -738,7 +770,7 @@ namespace BackEndProject.Migrations
                             BestSeller = true,
                             BrandId = 7,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 7, 25, 23, 26, 28, 116, DateTimeKind.Local).AddTicks(1047),
+                            CreatedAt = new DateTime(2022, 7, 27, 1, 7, 13, 573, DateTimeKind.Local).AddTicks(5307),
                             DiscountPrice = 0.0,
                             InStock = true,
                             IsDeleted = false,
@@ -902,6 +934,32 @@ namespace BackEndProject.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BackEndProject.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SendText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenderEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenderName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Review");
+                });
+
             modelBuilder.Entity("BackEndProject.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -957,6 +1015,28 @@ namespace BackEndProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+                });
+
+            modelBuilder.Entity("BackEndProject.Models.TagBlog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("TagBlog");
                 });
 
             modelBuilder.Entity("BackEndProject.Models.TagProduct", b =>
@@ -1031,10 +1111,8 @@ namespace BackEndProject.Migrations
 
             modelBuilder.Entity("BackEndProject.Models.User", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -1075,6 +1153,9 @@ namespace BackEndProject.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Surname")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -1086,6 +1167,28 @@ namespace BackEndProject.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("BackEndProject.Models.WishList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("WishList");
+                });
+
             modelBuilder.Entity("BackEndProject.Models.BasketItem", b =>
                 {
                     b.HasOne("BackEndProject.Models.Product", "Product")
@@ -1095,15 +1198,21 @@ namespace BackEndProject.Migrations
                         .IsRequired();
 
                     b.HasOne("BackEndProject.Models.User", "User")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("UserId1");
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("BackEndProject.Models.Order", b =>
+            modelBuilder.Entity("BackEndProject.Models.Comment", b =>
                 {
-                    b.HasOne("BackEndProject.Models.User", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("UserId1");
+                    b.HasOne("BackEndProject.Models.Product", "Product")
+                        .WithMany("Comments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEndProject.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("BackEndProject.Models.OrderItem", b =>
@@ -1139,6 +1248,30 @@ namespace BackEndProject.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BackEndProject.Models.Review", b =>
+                {
+                    b.HasOne("BackEndProject.Models.Product", "Products")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BackEndProject.Models.TagBlog", b =>
+                {
+                    b.HasOne("BackEndProject.Models.Blog", "Blog")
+                        .WithMany("TagBlogs")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEndProject.Models.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BackEndProject.Models.TagProduct", b =>
                 {
                     b.HasOne("BackEndProject.Models.Product", null)
@@ -1146,6 +1279,19 @@ namespace BackEndProject.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BackEndProject.Models.WishList", b =>
+                {
+                    b.HasOne("BackEndProject.Models.Product", "Product")
+                        .WithMany("WishLists")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEndProject.Models.User", "User")
+                        .WithMany("WishLists")
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

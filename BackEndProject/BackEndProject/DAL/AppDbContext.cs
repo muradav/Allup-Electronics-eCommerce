@@ -27,6 +27,12 @@ namespace BackEndProject.DAL
         public DbSet<DeliveryBan> DeliveryBans { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
+        public DbSet<TagBlog> TagBlogs { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -742,6 +748,8 @@ namespace BackEndProject.DAL
             
 
             #endregion
+
+
         }
 
     }

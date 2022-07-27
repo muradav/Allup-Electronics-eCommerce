@@ -1,11 +1,4 @@
-﻿@using BackEndProject.Models
-@model HomeVM
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
+﻿@model HomeVM
 <!-- Slider Section -->
 <section class="slider-area slider-active">
     @foreach (var item in Model.Sliders)
@@ -20,7 +13,7 @@
                         <h4 data-animation="fadeInDown" data-delay="0.5s" class="sub-title">@item.DiscountSec</h4>
                         <h1 data-animation="fadeInLeft" data-delay="0.5s" class="main-title ">@item.Title</h1>
                         <p data-animation="fadeInRightBig" data-delay="0.5s">@item.Desc</p>
-                        <a data-animation="zoomIn" data-delay="0.5s" class="main-btn " href="single-product.html">Shop Now</a>
+                        <a data-animation="zoomIn" data-delay="0.5s" class="main-btn " asp-controller="detail" asp-action="index" asp-route-id="@item.Id">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +26,7 @@
 <div class="banner-area banner-bg">
     <div class="container-fluid custom-container">
         <div class="row">
-            @foreach (var item in Model.Banners)
+            @foreach (var item in Model.Bans)
             {
                 <div class="col-md-6">
                     <div class="banner-image">
@@ -109,7 +102,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain ==true ).ImageUrl" alt="product">
                                             <img class="second-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain == false ).ImageUrl" alt="product">
                                         </a>
@@ -128,7 +121,7 @@
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="price-sale">€@item.Price</span>
                                         </div>
@@ -147,7 +140,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain ==true ).ImageUrl" alt="product">
                                             <img class="second-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain == false ).ImageUrl" alt="product">
                                         </a>
@@ -166,7 +159,7 @@
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="price-sale">€@item.Price</span>
                                         </div>
@@ -185,7 +178,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain ==true ).ImageUrl" alt="product">
                                             <img class="second-image" src="~/assets/@item.ProductImages.Find(i => i.IsMain == false ).ImageUrl" alt="product">
                                         </a>
@@ -204,7 +197,7 @@
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="price-sale">€@item.Price</span>
                                         </div>
@@ -244,7 +237,7 @@
                                     @foreach (var jitem in item.ProductImages)
                                     {
                                     <div class="single-products-image">
-                                        <a href="#">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@jitem.Id">
                                             <img src="~/assets/@jitem.ImageUrl" alt="products">
                                         </a>
                                     </div>
@@ -319,7 +312,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i=>i.IsMain==true).ImageUrl" alt="product">
                                         </a>
                                         <span class="discount-product">@item.DiscountPrice</span>
@@ -332,7 +325,7 @@
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="regular-price">€@item.Price</span>
                                             <span class="price-sale">€@(item.Price-item.DiscountPrice)</span>
@@ -352,7 +345,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i=>i.IsMain==true).ImageUrl" alt="product">
                                         </a>
                                         <span class="discount-product">@item.DiscountPrice</span>
@@ -365,7 +358,7 @@
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="regular-price">€@item.Price</span>
                                             <span class="price-sale">€@(item.Price-item.DiscountPrice)</span>
@@ -385,7 +378,7 @@
                             <div class="col-lg-12">
                                 <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
                                     <div class="product-image">
-                                        <a href="single-product.html">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
                                             <img class="first-image" src="~/assets/@item.ProductImages.Find(i=>i.IsMain==true).ImageUrl" alt="product">
                                         </a>
                                         <span class="discount-product">@item.DiscountPrice</span>
@@ -398,7 +391,7 @@
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                             <li class="rating-on"><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                        <h4 class="product-title"><a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">@item.Name</a></h4>
                                         <div class="product-price">
                                             <span class="regular-price">€@item.Price</span>
                                             <span class="price-sale">€@(item.Price-item.DiscountPrice)</span>
@@ -441,7 +434,7 @@
     <div class="container-fluid custom-container">
         <div class="features-banner-wrapper d-flex flex-wrap">
 
-            @foreach (var item in Model.ShippingBanners)
+            @foreach (var item in Model.DeliveryBans)
             {
                 <div class="single-features-banner d-flex">
                     <div class="banner-icon">
@@ -515,6 +508,4 @@
 
 <!--====== Testimonial Part Ends ======-->
 <!--====== Newsletter Part Start ======-->
-
-
 

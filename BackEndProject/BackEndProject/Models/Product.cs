@@ -8,6 +8,7 @@ namespace BackEndProject.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Desc { get; set; }
 
         public bool IsFeatured { get; set; }
         public bool BestSeller { get; set; }
@@ -18,6 +19,7 @@ namespace BackEndProject.Models
         public double DiscountPrice { get; set; }
         public double TaxPercent { get; set; }
         public int StockCount { get; set; }
+        public Nullable<int> PercentageDiscount { get; set; }
 
         public Nullable<DateTime> CreatedAt { get; set; }
         public Nullable<DateTime> DeletedAt { get; set; }
@@ -36,5 +38,8 @@ namespace BackEndProject.Models
         public List<ProductImage> ProductImages { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public List<BasketItem> BasketItems { get; set; }
+        public List<Comment> Comments { get; set; }
+        public List<Review> Reviews { get; set; }
+        public List<WishList> WishLists { get; set; }
     }
 }

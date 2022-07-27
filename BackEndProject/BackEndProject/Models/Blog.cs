@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEndProject.Models
 {
@@ -9,5 +12,10 @@ namespace BackEndProject.Models
         public string Content { get; set; }
         public DateTime Time { get; set; }
         public string ImageUrl { get; set; }
+
+        [NotMappedAttribute]
+        public IFormFile Photo { get; set; }
+
+        public List<TagBlog> TagBlogs { get; set; }
     }
 }
