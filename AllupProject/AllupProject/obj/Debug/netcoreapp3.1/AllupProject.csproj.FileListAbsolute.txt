@@ -1,8 +1,0 @@
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.csproj.AssemblyReference.cache
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.AssemblyInfoInputs.cache
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.AssemblyInfo.cs
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.csproj.CoreCompileInputs.cache
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.RazorAssemblyInfo.cache
-C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\AllupProject\obj\Debug\netcoreapp3.1\AllupProject.RazorAssemblyInfo.cs

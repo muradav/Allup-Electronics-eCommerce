@@ -1,0 +1,49 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<main role="main" class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form method="post" enctype="multipart/form-data">
+                    <h2 style="text-align:center;" class="page-title">Product Create Form</h2>
+                    <div class="card shadow mb-4">
+                        <div class="card-header" style="text-align:center">
+                            <strong class="card-title" style="font-size:17px">Brand Details</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" style="display:flex; justify-content:center;align-items:center;flex-direction:column;">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Name" for="simpleinput">Brand Name</label>
+                                        <input asp-for="Name" type="text" id="simpleinput" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                    </div>
+                                    <div class="card shadow mb-6" style="justify-content:center;align-items:center;">
+                                        <div class="card-header" style="text-align:center;font-size:17px;">
+                                            <strong>Upload Images</strong>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label asp-for="Image" for="customFile"></label>
+                                            <div class="custom-file">
+                                                <input asp-for="Image" type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div> <!-- .card -->
+                                </div> <!-- /.col -->
+                            </div>
+                        </div>
+                    </div> <!-- / .card -->
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a class="btn btn-dark" asp-action="index">Go back</a>
+                    </div>
+                </form>
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+</main>
