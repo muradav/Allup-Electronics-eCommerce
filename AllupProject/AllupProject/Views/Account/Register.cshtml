@@ -1,0 +1,43 @@
+﻿@model RegisterVM
+
+<section class="register-area pt-10">
+    <div class="container-fluid custom-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="login-register-wrapper mt-30">
+                    <h4 class="allup-title">Creat New Account</h4>
+                    <p class="mt-10">Account Varindimi ?? <a asp-action="login">Login</a></p>
+                    <form method="post">
+                        <div class="single-form">
+                            <input asp-for="Name" placeholder="First Name" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Surname" placeholder="Last Name" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="Surname"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Email" placeholder="Email Address" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Username" placeholder="Username" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="Username"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Password" placeholder="Password" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="RepeatPassword" placeholder="Confirm Password" autocomplete="off">
+                            <span class="text-danger" asp-validation-for="RepeatPassword"></span>
+                        </div>
+                            <div class="single-form">
+                                <button type="submit" class="main-btn main-btn-2">Register</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
