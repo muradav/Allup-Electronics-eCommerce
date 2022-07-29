@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Fiorello Admin</title>
+    <title>Allup-Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/admin/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/admin/vendors/css/vendor.bundle.base.css">
@@ -218,17 +218,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+              <a class="nav-link" asp-controller="product" asp-action="index">
+                <span class="menu-title">Product</span>
+                <i class="mdi mdi-format-align-justify menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/icons/mdi.html">

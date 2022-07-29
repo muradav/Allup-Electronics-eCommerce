@@ -361,3 +361,5 @@ C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netc
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Allup.genruntimeconfig.cache
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
