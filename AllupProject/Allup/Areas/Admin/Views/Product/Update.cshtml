@@ -1,0 +1,223 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="Id" value="@Model.Id">
+                    <h2 style="text-align:center;" class="page-title">Product Update Form</h2>
+                    <div class="card shadow mb-4">
+                        <div class="card-header" style="text-align:center">
+                            <strong class="card-title" style="font-size:17px">Product Details</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Name" for="simpleinput">Product Name</label>
+                                        <input asp-for="Name" type="text" id="simpleinput" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Price" for="simpleinput">Price</label>
+                                        <input asp-for="Price" type="text" id="simpleinput" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Price"></span>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="StockCount" for="simpleinput">Stock Count</label>
+                                        <input asp-for="StockCount" type="text" id="simpleinput" class="form-control">
+                                        <span class="text-danger" asp-validation-for="StockCount"></span>
+                                    </div>
+                                </div> <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Category" for="custom-select">Categories</label>
+                                        <select asp-items="@ViewBag.Categories" asp-for="CategoryId" class="custom-select" id="custom-select">
+                                            <option selected>@Model.Category.Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Brand" for="custom-select">Brands</label>
+                                        <select asp-items="@ViewBag.Brands" asp-for="BrandId" class="custom-select" id="custom-select">
+                                            <option selected>@Model.Brand.Name"</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-mb-3">
+                                        <label asp-for="TagProducts" for="multi-select2">Multiple Select</label>
+                                        <select asp-items="@ViewBag.Tags" asp-for="Id" class="form-control select2-multi" id="multi-select2">
+                                        </select>
+                                    </div> <!-- form-group -->
+                                </div>
+                            </div>
+                            <div class="row" style="justify-content:center;align-items:center;">
+                                <div class="col-md-12" style="justify-content: center; align-items: center; display:flex;">
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Featured</label>
+                                    </span>
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Best Seller</label>
+                                    </span>
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1-1" disabled checked>
+                                        <label class="custom-control-label" for="customCheck1">New Arrival</label>
+                                    </span>
+                                </div> <!-- /.col -->
+                            </div>
+                        </div>
+                    </div> <!-- / .card -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card shadow mb-4" style="justify-content:center;align-items:center;">
+                                <div class="card-header" style="text-align:center;font-size:17px;">
+                                    <strong>Upload Images</strong>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label asp-for="Image" for="customFile"></label>
+                                    <div class="custom-file">
+                                        <input asp-for="Image" type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div> <!-- .card -->
+                        </div>
+
+                    </div>
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a class="btn btn-dark" asp-action="index">Go back</a>
+                    </div>
+                </form>
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-flush my-n3">
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-box fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Package has uploaded successfull</strong></small>
+                                    <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                                    <small class="badge badge-pill badge-light text-muted">1m ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-download fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Widgets are updated successfull</strong></small>
+                                    <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
+                                    <small class="badge badge-pill badge-light text-muted">2m ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-inbox fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Notifications have been sent</strong></small>
+                                    <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                                    <small class="badge badge-pill badge-light text-muted">30m ago</small>
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-link fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Link was attached to menu</strong></small>
+                                    <div class="my-0 text-muted small">New layout has been attached to the menu</div>
+                                    <small class="badge badge-pill badge-light text-muted">1h ago</small>
+                                </div>
+                            </div>
+                        </div> <!-- / .row -->
+                    </div> <!-- / .list-group -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body px-5">
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-success justify-content-center">
+                                <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Control area</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Activity</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Droplet</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Upload</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Users</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Settings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
