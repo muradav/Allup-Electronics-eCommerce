@@ -60,7 +60,7 @@ namespace Allup
                 endpoints.MapControllerRoute(
 
                name: "areas",
-               pattern: "{area:exists}/{controller=product}/{action=Index}/{id?}");
+               pattern: "{area:exists}/{controller=dashboard}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                        "default",

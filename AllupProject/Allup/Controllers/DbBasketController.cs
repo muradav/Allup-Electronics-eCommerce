@@ -62,14 +62,17 @@ namespace Allup.Controllers
                 item.ProductId = product.Id;
                 item.BasketId = basket.Id;
                 item.ProductCount = 1;
+                item.Total = product.Price * item.ProductCount;
 
                 _context.Add(item);
             }
             else
             {
                 isexsist.ProductCount++;
+                isexsist.Total = isexsist.Product.Price * isexsist.ProductCount;
             }
 
+            
             _context.SaveChanges();
 
             if (ReturnUrl != null) return Redirect(ReturnUrl);
@@ -133,9 +136,13 @@ namespace Allup.Controllers
 
             BasketItem increaseItem = basketItems.FirstOrDefault(p => p.ProductId == id);
 
+            Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+
             if (increaseItem.ProductCount < _context.Products.FirstOrDefault(p => p.Id == id).StockCount)
             {
-                _context.BasketItems.FirstOrDefault(b => b.Id == increaseItem.Id).ProductCount++;
+                var item = _context.BasketItems.FirstOrDefault(b => b.Id == increaseItem.Id);
+                item.ProductCount++;
+                item.Total = item.ProductCount * product.Price;
                 _context.SaveChanges();
             }
 
@@ -154,9 +161,13 @@ namespace Allup.Controllers
 
             BasketItem decreaseItem = basketItems.FirstOrDefault(p => p.ProductId == id);
 
+            Product product = _context.Products.FirstOrDefault(p => p.Id == id);
+
             if (decreaseItem.ProductCount > 1 )
             {
-                _context.BasketItems.FirstOrDefault(b => b.Id == decreaseItem.Id).ProductCount--;
+                var item = _context.BasketItems.FirstOrDefault(b => b.Id == decreaseItem.Id);
+                item.ProductCount--;
+                item.Total = item.ProductCount * product.Price;
                 _context.SaveChanges();
             }
             else
