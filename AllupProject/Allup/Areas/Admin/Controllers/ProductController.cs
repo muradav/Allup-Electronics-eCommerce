@@ -55,16 +55,16 @@ namespace Allup.Areas.Admin.Controllers
         //    return View(products);
         //}
 
-        //public IActionResult Undelete(int id)
-        //{
-        //    Product deletedProduct = _context.Products.Find(id);
-        //    if (deletedProduct == null) return NotFound();
-        //    deletedProduct.DeletedAt = null;
-        //    deletedProduct.IsDeleted = false;
-        //    deletedProduct.CreatedAt = DateTime.Now;
-        //    _context.SaveChanges();
-        //    return RedirectToAction("index");
-        //}
+        public IActionResult Undelete(int id)
+        {
+            Product deletedProduct = _context.Products.Find(id);
+            if (deletedProduct == null) return NotFound();
+            deletedProduct.DeletedAt = null;
+            deletedProduct.IsDeleted = false;
+            deletedProduct.CreatedAt = DateTime.Now;
+            _context.SaveChanges();
+            return RedirectToAction("index");
+        }
         #endregion
 
         public IActionResult Update(int? id)
@@ -121,12 +121,73 @@ namespace Allup.Areas.Admin.Controllers
 
             dbProduct.Name = product.Name;
             dbProduct.CategoryId = product.CategoryId;
+            dbProduct.Price = product.Price;
+            dbProduct.StockCount = product.StockCount;
             dbProduct.BrandId = product.BrandId;
             dbProduct.TagProducts = product.TagProducts;
             dbProduct.UptadetAt = DateTime.Now;
 
             _context.SaveChanges();
             return RedirectToAction("index");
+        }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            Product dbProduct = _context.Products.Find(id);
+
+            if (dbProduct == null) return NotFound();
+
+            dbProduct.IsDeleted = true;
+            dbProduct.DeletedAt = DateTime.Now;
+            dbProduct.CreatedAt = null;
+
+            
+            _context.SaveChanges();
+
+            return RedirectToAction("index");
+
+        }
+
+        public IActionResult Create()
+        {
+            ViewBag.Categories = new SelectList(_context.Categories.Where(c => c.Children.Count == 0 || c.ParentId != null && c.IsDeleted == false).ToList(), "Id", "Name");
+            ViewBag.Brands = new SelectList(_context.Brands.Where(b => b.IsDeleted == false).ToList(), "Id", "Name");
+            ViewBag.Tags = new SelectList(_context.Tags.ToList(), "Id", "Name");
+            Product product = new Product();
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+
+            if (!ModelState.IsValid) return View();
+
+            Product newProduct = new Product
+            {
+                Name = product.Name,
+                BrandId = product.BrandId,
+                CategoryId = product.CategoryId,
+                ProductImages = product.ProductImages,
+                CreatedAt = DateTime.Now,
+                Price = product.Price,
+                StockCount = product.StockCount,
+            };
+            List<ProductImage> productImages = new List<ProductImage>();
+            ProductImage newproductImage = new ProductImage
+            {
+                ImageUrl = "images/" + product.Image.SaveImage(_env, @"assets\images"),
+                ProductId = newProduct.Id,
+                IsMain = true
+            };
+
+            productImages.Add(newproductImage);
+            newProduct.ProductImages = productImages;
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Allup.Migrations
 {
-    public partial class addMigAgain : Migration
+    public partial class again : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -167,6 +167,19 @@ namespace Allup.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sliders", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subscriptions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subscriptions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -618,10 +631,10 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "Content", "ImageUrl", "Time", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-1.jpg", new DateTime(2022, 7, 29, 17, 30, 20, 877, DateTimeKind.Local).AddTicks(6789), "This is first blog" },
-                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-2.jpg", new DateTime(2022, 7, 29, 17, 30, 20, 877, DateTimeKind.Local).AddTicks(7586), "This is second blog" },
-                    { 3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-3.jpg", new DateTime(2022, 7, 29, 17, 30, 20, 877, DateTimeKind.Local).AddTicks(7656), "This is third blog" },
-                    { 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-4.jpg", new DateTime(2022, 7, 29, 17, 30, 20, 877, DateTimeKind.Local).AddTicks(7697), "This is fourth blog" }
+                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-1.jpg", new DateTime(2022, 7, 30, 1, 15, 43, 764, DateTimeKind.Local).AddTicks(5316), "This is first blog" },
+                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-2.jpg", new DateTime(2022, 7, 30, 1, 15, 43, 764, DateTimeKind.Local).AddTicks(6707), "This is second blog" },
+                    { 3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-3.jpg", new DateTime(2022, 7, 30, 1, 15, 43, 764, DateTimeKind.Local).AddTicks(6842), "This is third blog" },
+                    { 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui rhoncus, malesuada lectus vel, rhoncus felis. Suspendisse nec tempor nunc, non maximus lacus.", "images/blog-4.jpg", new DateTime(2022, 7, 30, 1, 15, 43, 764, DateTimeKind.Local).AddTicks(6931), "This is fourth blog" }
                 });
 
             migrationBuilder.InsertData(
@@ -629,16 +642,16 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "ImageUrl", "IsDeleted", "Name", "UptadetAt" },
                 values: new object[,]
                 {
-                    { 10, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3262), null, "images/brand/brand-3.jpg", false, "Dell", null },
-                    { 9, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3216), null, "images/brand/brand-4.jpg", false, "HP", null },
-                    { 8, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3152), null, "images/brand/brand-2.jpg", false, "Toshiba", null },
-                    { 7, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3114), null, "images/brand/brand-1.jpg", false, "Gorenji", null },
-                    { 6, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3074), null, "images/brand/brand-6.jpg", false, "Delonghi", null },
-                    { 4, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(2981), null, "images/brand/brand-4.jpg", false, "Xioami", null },
-                    { 3, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(2929), null, "images/brand/brand-3.jpg", false, "HTC", null },
-                    { 2, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(2660), null, "images/brand/brand-2.jpg", false, "Apple", null },
-                    { 1, new DateTime(2022, 7, 29, 17, 30, 20, 872, DateTimeKind.Local).AddTicks(3513), null, "images/brand/brand-1.jpg", false, "Nokia", null },
-                    { 5, new DateTime(2022, 7, 29, 17, 30, 20, 875, DateTimeKind.Local).AddTicks(3024), null, "images/brand/brand-5.jpg", false, "Hoffmann", null }
+                    { 10, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2955), null, "images/brand/brand-3.jpg", false, "Dell", null },
+                    { 9, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2844), null, "images/brand/brand-4.jpg", false, "HP", null },
+                    { 8, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2747), null, "images/brand/brand-2.jpg", false, "Toshiba", null },
+                    { 7, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2651), null, "images/brand/brand-1.jpg", false, "Gorenji", null },
+                    { 6, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2555), null, "images/brand/brand-6.jpg", false, "Delonghi", null },
+                    { 4, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2352), null, "images/brand/brand-4.jpg", false, "Xioami", null },
+                    { 3, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2238), null, "images/brand/brand-3.jpg", false, "HTC", null },
+                    { 2, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(1741), null, "images/brand/brand-2.jpg", false, "Apple", null },
+                    { 1, new DateTime(2022, 7, 30, 1, 15, 43, 755, DateTimeKind.Local).AddTicks(4808), null, "images/brand/brand-1.jpg", false, "Nokia", null },
+                    { 5, new DateTime(2022, 7, 30, 1, 15, 43, 760, DateTimeKind.Local).AddTicks(2446), null, "images/brand/brand-5.jpg", false, "Hoffmann", null }
                 });
 
             migrationBuilder.InsertData(
@@ -646,15 +659,15 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "ImageUrl", "IsDeleted", "Name", "ParentId", "UptadetAt" },
                 values: new object[,]
                 {
-                    { 9, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1891), null, "images/category-9.jpg", false, "Household", null, null },
-                    { 13, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(2063), null, "images/category-1.jpg", false, "Technologics", null, null },
-                    { 10, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1938), null, "images/category-8.jpg", false, "Accessories", null, null },
-                    { 6, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1736), null, "images/category-6.jpg", false, "Tops & Sets", null, null },
-                    { 7, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1778), null, "images/category-7.jpg", false, "Audio & Video", null, null },
-                    { 4, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1645), null, "images/category-4.jpg", false, "Game Consoles", null, null },
-                    { 3, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1597), null, "images/category-3.jpg", false, "Smartphone", null, null },
-                    { 1, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(622), null, "images/category-2.jpg", false, "Computer", null, null },
-                    { 5, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1687), null, "images/category-5.jpg", false, "Bottoms", null, null }
+                    { 9, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8301), null, "images/category-9.jpg", false, "Household", null, null },
+                    { 13, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8739), null, "images/category-1.jpg", false, "Technologics", null, null },
+                    { 10, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8427), null, "images/category-8.jpg", false, "Accessories", null, null },
+                    { 6, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(7931), null, "images/category-6.jpg", false, "Tops & Sets", null, null },
+                    { 7, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8034), null, "images/category-7.jpg", false, "Audio & Video", null, null },
+                    { 4, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(7690), null, "images/category-4.jpg", false, "Game Consoles", null, null },
+                    { 3, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(7476), null, "images/category-3.jpg", false, "Smartphone", null, null },
+                    { 1, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(5798), null, "images/category-2.jpg", false, "Computer", null, null },
+                    { 5, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(7816), null, "images/category-5.jpg", false, "Bottoms", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -682,16 +695,16 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "Name", "UptadetAt" },
                 values: new object[,]
                 {
-                    { 8, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5829), null, "used", null },
-                    { 7, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5792), null, "new", null },
-                    { 6, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5755), null, "windowsphone", null },
-                    { 5, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5715), null, "ios", null },
-                    { 2, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5572), null, "iphone", null },
-                    { 3, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5640), null, "samsung", null },
-                    { 1, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(4894), null, "phone", null },
-                    { 9, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5875), null, "microsoft", null },
-                    { 4, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5679), null, "android", null },
-                    { 10, new DateTime(2022, 7, 29, 17, 30, 20, 878, DateTimeKind.Local).AddTicks(5917), null, "linux", null }
+                    { 8, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1878), null, "used", null },
+                    { 7, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1764), null, "new", null },
+                    { 6, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1682), null, "windowsphone", null },
+                    { 5, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1590), null, "ios", null },
+                    { 2, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1278), null, "iphone", null },
+                    { 3, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1417), null, "samsung", null },
+                    { 1, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(9), null, "phone", null },
+                    { 9, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1975), null, "microsoft", null },
+                    { 4, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(1505), null, "android", null },
+                    { 10, new DateTime(2022, 7, 30, 1, 15, 43, 766, DateTimeKind.Local).AddTicks(2062), null, "linux", null }
                 });
 
             migrationBuilder.InsertData(
@@ -709,10 +722,10 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "ImageUrl", "IsDeleted", "Name", "ParentId", "UptadetAt" },
                 values: new object[,]
                 {
-                    { 2, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1483), null, "images/category-1.jpg", false, "Laptop", 1, null },
-                    { 12, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(2022), null, "images/category-12.jpg", false, "Video Games", 4, null },
-                    { 8, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1840), null, "images/category-10.jpg", false, "Camera", 7, null },
-                    { 11, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(1980), null, "images/category-11.jpg", false, "Michrophone", 7, null }
+                    { 2, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(7286), null, "images/category-1.jpg", false, "Laptop", 1, null },
+                    { 12, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8636), null, "images/category-12.jpg", false, "Video Games", 4, null },
+                    { 8, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8179), null, "images/category-10.jpg", false, "Camera", 7, null },
+                    { 11, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(8534), null, "images/category-11.jpg", false, "Michrophone", 7, null }
                 });
 
             migrationBuilder.InsertData(
@@ -720,14 +733,14 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "BestSeller", "BrandId", "CategoryId", "CreatedAt", "DeletedAt", "DiscountPrice", "InStock", "IsDeleted", "IsFeatured", "Name", "NewArrival", "Price", "StockCount", "TaxPercent", "UptadetAt" },
                 values: new object[,]
                 {
-                    { 8, false, 6, 3, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8321), null, 0.0, true, false, true, "MiPods", true, 79.0, 17, 0.0, null },
-                    { 1, false, 10, 4, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(2711), null, 30.0, true, false, false, "Joystic Logitech g66", true, 90.0, 23, 0.0, null },
-                    { 4, true, 2, 7, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8123), null, 0.0, true, false, false, "Printer", true, 35.0, 21, 0.0, null },
-                    { 2, true, 5, 10, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(7877), null, 30.0, true, false, false, "Airpods Pro", false, 20.0, 13, 0.0, null },
-                    { 3, false, 4, 10, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8072), null, 0.0, true, false, true, "HDD", false, 45.0, 15, 0.0, null },
-                    { 6, true, 1, 10, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8233), null, 0.0, true, false, true, "Glasses", false, 59.0, 8, 0.0, null },
-                    { 5, false, 2, 13, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8184), null, 0.0, true, false, true, "Go Pro Max", true, 410.0, 19, 0.0, null },
-                    { 7, false, 3, 13, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8277), null, 0.0, true, false, true, "Insta360", false, 79.0, 7, 0.0, null }
+                    { 8, false, 6, 3, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9908), null, 0.0, true, false, true, "MiPods", true, 79.0, 17, 0.0, null },
+                    { 1, false, 10, 4, new DateTime(2022, 7, 30, 1, 15, 43, 761, DateTimeKind.Local).AddTicks(9865), null, 30.0, true, false, false, "Joystic Logitech g66", true, 90.0, 23, 0.0, null },
+                    { 4, true, 2, 7, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9467), null, 0.0, true, false, false, "Printer", true, 35.0, 21, 0.0, null },
+                    { 2, true, 5, 10, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(8914), null, 30.0, true, false, false, "Airpods Pro", false, 20.0, 13, 0.0, null },
+                    { 3, false, 4, 10, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9348), null, 0.0, true, false, true, "HDD", false, 45.0, 15, 0.0, null },
+                    { 6, true, 1, 10, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9689), null, 0.0, true, false, true, "Glasses", false, 59.0, 8, 0.0, null },
+                    { 5, false, 2, 13, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9571), null, 0.0, true, false, true, "Go Pro Max", true, 410.0, 19, 0.0, null },
+                    { 7, false, 3, 13, new DateTime(2022, 7, 30, 1, 15, 43, 762, DateTimeKind.Local).AddTicks(9798), null, 0.0, true, false, true, "Insta360", false, 79.0, 7, 0.0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -756,7 +769,7 @@ namespace Allup.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "BestSeller", "BrandId", "CategoryId", "CreatedAt", "DeletedAt", "DiscountPrice", "InStock", "IsDeleted", "IsFeatured", "Name", "NewArrival", "Price", "StockCount", "TaxPercent", "UptadetAt" },
-                values: new object[] { 9, true, 7, 2, new DateTime(2022, 7, 29, 17, 30, 20, 876, DateTimeKind.Local).AddTicks(8364), null, 0.0, true, false, false, "Zenbook", false, 340.0, 9, 0.0, null });
+                values: new object[] { 9, true, 7, 2, new DateTime(2022, 7, 30, 1, 15, 43, 763, DateTimeKind.Local).AddTicks(32), null, 0.0, true, false, false, "Zenbook", false, 340.0, 9, 0.0, null });
 
             migrationBuilder.InsertData(
                 table: "ProductImages",
@@ -943,6 +956,9 @@ namespace Allup.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sliders");
+
+            migrationBuilder.DropTable(
+                name: "Subscriptions");
 
             migrationBuilder.DropTable(
                 name: "TagBlog");
