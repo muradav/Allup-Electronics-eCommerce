@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th class="no">No</th>
-                    <th class="name">Name</th>
+                    <th class="name">Customer</th>
                     <th class="date">Date</th>
                     <th class="date">Country</th>
                     <th class="date">Adress</th>
@@ -32,7 +32,7 @@
                     <td>@item.OrderStatus</td>
                     <td>@item.PaymantMethod</td>
                     <td>$@String.Format("{0:0.00}", item.TotalPrice)</td>
-                    <td><a asp-action="orderdetail" asp-route-id="@item.Id">View</a></td>
+                    <td><a class="btn btn-info" asp-action="orderdetail" asp-route-id="@item.Id">Show Order List</a></td>
                 </tr>
                 }
             </tbody>

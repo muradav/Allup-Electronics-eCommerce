@@ -1,8 +1,67 @@
-﻿
+﻿@model List<Category>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<main role="main" class="main-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h2 class="mb-2 page-title" style="text-align :center">Categories Data</h2>
+                        <div class="row my-4">
+                            <!-- Small table -->
+                            <div class="col-md-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <!-- table -->
+                                        <table class="table datatables" id="dataTable-1">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Photo</th>
+                                                    <th>Name</th>
+                                                    <th>Settings</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                            if (item.IsDeleted == true)
+                                            {
+                                                <tr>
+                                                      <td>@item.Id</td>
+                                                      <td><img width="100" height="100" src="~/assets/@item.ImageUrl"/></td>
+                                                      <td>@item.Name</td>
+                                                      <td>
+                                                          <a class="btn btn-sm btn-warning btn-rounded"  asp-action="update" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-tooltip-edit"></i></a>
+                                                          @* <a class="btn btn-sm btn-info btn-rounded" asp-action="detail" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-information-outline"></i></a>*@
+                                                          <a class="btn btn-sm btn-success btn-rounded" asp-action="undelete" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-backup-restore"></i></a>
+                                                      </td>
+                                                </tr>
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                       <td>@item.Id</td>
+                                                       <td><img width="100" height="100" src="~/assets/@item.ImageUrl"/></td>
+                                                       <td>@item.Name</td>
+                                                       <td>
+                                                           <a class="btn btn-sm btn-warning btn-rounded"  asp-action="update" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-tooltip-edit"></i></a>
+                                                           @* <a class="btn btn-sm btn-info btn-rounded" asp-action="detail" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-information-outline"></i></a>*@
+                                                           <a class="btn btn-sm btn-success btn-rounded" asp-action="delete" asp-route-id="@item.Id"><i style="font-size:16px" class="mdi mdi-delete"></i></a>
+                                                       </td>
+                                                </tr>
+                                            }
+                                        }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- simple table -->
+                        </div> <!-- end section -->
+                    </div> <!-- .col-12 -->
+                </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
 
