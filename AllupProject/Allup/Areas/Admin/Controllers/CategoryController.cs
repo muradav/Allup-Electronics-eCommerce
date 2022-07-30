@@ -147,5 +147,22 @@ namespace Allup.Areas.Admin.Controllers
 			return RedirectToAction("index");
 		}
 
+		public IActionResult Delete(int? id)
+		{
+			if (id == null) return NotFound();
+
+			Category dbCategory = _context.Categories.Find(id);
+
+			if (dbCategory == null) return NotFound();
+
+			dbCategory.IsDeleted = true;
+			dbCategory.DeletedAt = DateTime.Now;
+			dbCategory.CreatedAt = null;
+
+			_context.SaveChanges();
+			return RedirectToAction("Index");
+
+		}
+
 	}
 }
