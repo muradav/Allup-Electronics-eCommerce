@@ -1,0 +1,100 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+            <div>
+              <div class="card-header bg-light">
+                Create Product
+              </div>
+              <div class="card-body bg-white">
+                <form method="post" enctype="multipart/form-data">
+                      <input type="hidden" name="Id" value="@Model.Id">
+                      <div class="form-group">
+                            <label asp-for="Name" for="simpleinput">Product Name</label>
+                            <input asp-for="Name" type="text" id="simpleinput" class="form-control">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                      </div>
+                      <div class="form-group">
+                            <label asp-for="Price" for="simpleinput">Price</label>
+                            <input asp-for="Price" type="text" id="simpleinput" class="form-control">
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                      </div>
+                      <div class="form-group">
+                            <label asp-for="StockCount" for="simpleinput">Stock Count</label>
+                            <input asp-for="StockCount" type="text" id="simpleinput" class="form-control">
+                            <span class="text-danger" asp-validation-for="StockCount"></span>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                    <label asp-for="Category" for="custom-select">Categories</label>
+                                    <select asp-items="@ViewBag.Categories" asp-for="CategoryId" class="custom-select" id="custom-select">
+                                        <option selected>Select Category</option>
+                                    </select>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                    <label asp-for="Brand" for="custom-select">Brands</label>
+                                    <select asp-items="@ViewBag.Brands" asp-for="BrandId" class="custom-select" id="custom-select">
+                                        <option selected>Select Brand</option>
+                                    </select>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                    <label asp-for="TagProducts" for="multi-select2">Tag</label>
+                                    <select asp-items="@ViewBag.Tags" asp-for="TagProducts" class="form-control select2-multi" id="multi-select2" multiple>
+                                    </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row" style="justify-content:space-between;align-items:center;">
+                         <div class="col-md-6" style="justify-content: center; align-items: center; display:flex;">
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Featured</label>
+                                    </span>
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Best Seller</label>
+                                    </span>
+                                    <span class="custom-control custom-checkbox" style="margin:10px;">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1-1" disabled checked>
+                                        <label class="custom-control-label" for="customCheck1">New Arrival</label>
+                                    </span>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="Image" for="customFile"></label>
+                                    <div class="custom-file">
+                                        <input asp-for="Image" type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile"></label>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center" class="mt-5">
+                        <button type="submit" class="btn btn-success me-2">Submit</button>
+                        <a class="btn btn-dark" asp-action="index">Go back</a>
+                    </div>
+                </form>
+              </div>
+              @*<div class="card-footer text-muted bg-info">
+                    @if (Model.UptadetAt != null)
+                       {
+                           <td><span style="color:black">Last Update Date: @Model.UptadetAt.Value.Date.ToLongDateString()</span></td>
+                       }
+              </div>*@
+            </div>
+                
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div>
+
