@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Allup.Areas.Admin.Controllers
@@ -88,7 +89,63 @@ namespace Allup.Areas.Admin.Controllers
 			return RedirectToAction("Index");
 		}
 
-		
+		public IActionResult Update(int? id)
+		{
+			if (id == null) return NotFound();
+
+			Category dbCategory = _context.Categories.FirstOrDefault(b => b.Id == id);
+
+			if (dbCategory == null) return NotFound();
+
+			var dbParents = _context.Categories.Where(x => x.ParentId == null).ToList();
+			var dbChildren = _context.Categories.Where(x => x.ParentId != null).ToList();
+			ViewBag.Parents = new SelectList(dbParents, "Id", "Name");
+			ViewBag.Children = new SelectList(dbChildren, "Id", "Name");
+
+			return View(dbCategory);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult Update(Category category)
+		{
+			Category dbCategory = _context.Categories.FirstOrDefault(x => x.Id == category.Id);
+			if (dbCategory == null) return NotFound();
+
+			if (ModelState["Image"] != null)
+			{
+				if (!category.Image.IsImage())
+				{
+					ModelState.AddModelError("Image", "Wrong format");
+					return View();
+				}
+				if (category.Image.ImageSize(8000))
+				{
+					ModelState.AddModelError("Image", "OVERsize");
+					return View();
+				}
+
+
+				string path = Path.Combine(_env.WebRootPath, @"assets\images\", dbCategory.ImageUrl);
+				ImageService.DeleteImage(path);
+				dbCategory.ImageUrl = "images/" + category.Image.SaveImage(_env, @"assets\images\");
+			}
+			var catName = _context.Brands.FirstOrDefault(x => x.Name.ToLower() == category.Name.ToLower());
+
+			if (catName != null)
+			{
+				if (dbCategory.Name.ToLower() != dbCategory.Name.ToLower())
+				{
+					ModelState.AddModelError("Name", "Model Name is exsist");
+					return View("Update");
+				}
+			}
+			dbCategory.Name = category.Name;
+			dbCategory.UptadetAt = DateTime.Now;
+
+			_context.SaveChanges();
+			return RedirectToAction("index");
+		}
 
 	}
 }

@@ -1,0 +1,58 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+            <div>
+              <div>
+                <h1>Create Category</h1>
+              </div>
+              <div class="card-body bg-white mt-5">
+                <form method="post" enctype="multipart/form-data">
+                      <input type="hidden" name="Id" value="@Model.Id">
+                      <div class="form-group">
+                            <label asp-for="Name" for="simpleinput">Category Name</label>
+                            <input asp-for="Name" type="text" id="simpleinput" class="form-control">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                      </div>
+                      <div class="form-group">
+                            <label asp-for="ParentId" for="custom-select">Parent Category </label>
+                            <select asp-items="@ViewBag.Parents" asp-for="ParentId" class="custom-select" id="custom-select">
+                                <option selected>Show Categories</option>
+                            </select>
+                      </div>
+                      <div class="form-group">
+                            <label asp-for="Children" for="multi-select2">Children Categories </label>
+                            <select asp-items="@ViewBag.Children" asp-for="Children" class="form-control select2-multi" id="multi-select2">
+                            </select>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                               <div class="form-group mb-3">
+                                   <label asp-for="Image" for="customFile"></label>
+                                   <div class="custom-file">
+                                       <input asp-for="Image" type="file" class="custom-file-input" id="customFile">
+                                       <label class="custom-file-label" for="customFile"></label>
+                                   </div>
+                               </div>
+                          </div>
+                      </div>
+                    <div style="text-align:center" class="mt-5">
+                        <button type="submit" class="btn btn-success me-2">Submit</button>
+                        <a class="btn btn-dark" asp-action="index">Go back</a>
+                    </div>
+                </form>
+              </div>
+            </div>
+                
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div>
+
+
+
