@@ -3,6 +3,7 @@ using Allup.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace Allup.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserManager<User> _userManager;
-        public OrderController(AppDbContext context, UserManager<User> userManager)
+        private readonly IConfiguration _config;
+        public OrderController(AppDbContext context, UserManager<User> userManager, IConfiguration config)
         {
             _context = context;
             _userManager = userManager;
+            _config = config;
         }
 
         public IActionResult Index()
@@ -44,12 +47,29 @@ namespace Allup.Controllers
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            Order newOrder = new Order();
+            var user = _context.Users.Find(userId);
 
             var basket = _context.Baskets.Include(b => b.BasketItems).ThenInclude(b => b.Product).FirstOrDefault(b => b.UserId == userId);
 
             var basketItems = basket.BasketItems.ToList();
 
+
+            double total = 0;
+
+            foreach (var item in basketItems)
+            {
+                total += item.Product.Price * item.ProductCount;
+            }
+
+            if (user.Balance <= total)
+            {
+                return RedirectToAction("index", "home");
+            }
+
+            user.Balance -= total;
+
+            Order newOrder = new Order();
+            Random random = new Random();
 
             newOrder.Address = order.Address;
             newOrder.City = order.City;
@@ -67,6 +87,7 @@ namespace Allup.Controllers
             _context.Orders.Add(newOrder);
             _context.SaveChanges();
 
+            newOrder.InvoiceNo = random.Next(1, 99).ToString() + newOrder.Id.ToString();
 
             foreach (var item in basketItems)
             {
@@ -85,6 +106,9 @@ namespace Allup.Controllers
             
 
             _context.SaveChanges();
+
+            
+
             return RedirectToAction("index","home");
         }
 

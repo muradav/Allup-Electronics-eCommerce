@@ -15,6 +15,7 @@ namespace Allup.Models
         public List<Order> Orders { get; set; }
         public Basket basket { get; set; }
         public List<Comment> Comments { get; set; }
+        public Nullable<double> Balance { get; set; }
     }
 
     public enum Roles

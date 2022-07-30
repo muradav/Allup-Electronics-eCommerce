@@ -367,3 +367,5 @@ C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netc
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Create.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
 C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Update.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Order\Index.cshtml.g.cs
+C:\Users\HP\Desktop\Development\BackEndProject\AllupProject\Allup\bin\Debug\netcoreapp3.1\Select.Html.dep

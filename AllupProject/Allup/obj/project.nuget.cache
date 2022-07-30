@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oSxBomHi3++xeyeD/vt4eaan85Q5+hSyvco0FRGke+bECYEtEsI0puhxv68COXpAZ9VMH+k6nalcDA2xTGWwCQ==",
+  "dgSpecHash": "UPoglWnsDkxr0XEGvDesIs3MZtYHtHWwYpsq9wQUFNRWoysfM+1/FI8Zz76rSy4g9W3pTT4NlvXbsynykds/Zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\Development\\BackEndProject\\AllupProject\\Allup\\Allup.csproj",
   "expectedPackageFiles": [
@@ -77,6 +77,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\select.htmltopdf\\22.1.0\\select.htmltopdf.22.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
