@@ -19,7 +19,7 @@ namespace Allup.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int page = 1, int pageSize = 6)
+        public IActionResult Index(int page = 1, int pageSize = 8)
         {
 
             ShopVM shopVM = new ShopVM();

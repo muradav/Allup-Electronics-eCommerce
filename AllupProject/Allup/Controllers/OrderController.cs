@@ -112,7 +112,7 @@ namespace Allup.Controllers
 
            EmailService emailService = new EmailService(_config.GetSection("ConfirmationParams:Email").Value, _config.GetSection("ConfirmationParams:Password").Value);
 
-            var emailResult=emailService.SendEmail(user.Email, "invoice-send", $"Customer:{newOrder.FirstName}", SendInovoice(newOrder.Id), $"{newOrder.InvoiceNo}.pdf");
+            emailService.SendEmail(user.Email, "invoice", $"Dear, {newOrder.FirstName} please attached invoice", SendInovoice(newOrder.Id), $"{newOrder.InvoiceNo}.pdf");
 
 
 
