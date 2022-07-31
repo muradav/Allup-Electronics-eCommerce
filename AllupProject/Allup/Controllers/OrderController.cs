@@ -1,11 +1,14 @@
 ﻿using Allup.DAL;
+using Allup.Extentions;
 using Allup.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using SelectPdf;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -107,7 +110,11 @@ namespace Allup.Controllers
 
             _context.SaveChanges();
 
-            
+           EmailService emailService = new EmailService(_config.GetSection("ConfirmationParams:Email").Value, _config.GetSection("ConfirmationParams:Password").Value);
+
+            var emailResult=emailService.SendEmail(user.Email, "invoice-send", $"Customer:{newOrder.FirstName}", SendInovoice(newOrder.Id), $"{newOrder.InvoiceNo}.pdf");
+
+
 
             return RedirectToAction("index","home");
         }
@@ -129,6 +136,29 @@ namespace Allup.Controllers
                 .FirstOrDefault(o => o.Id == id);
 
             return View(order);
+        }
+
+        public IActionResult Invoice(int id)
+        {
+            var order = _context.Orders
+                .Include(u => u.User)
+               .Include(o => o.OrderItems)
+               .ThenInclude(o => o.Product)
+               .FirstOrDefault(o => o.Id == id);
+
+            return View(order);
+        }
+
+        public byte[] SendInovoice(int id)
+        {
+            var desktopView = new HtmlToPdf();
+            desktopView.Options.WebPageWidth = 1024;
+
+
+            var pdf = desktopView.ConvertUrl($"https://localhost:44362/order/invoice/{id}");
+            var pdfBytes = pdf.Save();
+
+            return pdfBytes;
         }
     }
 }

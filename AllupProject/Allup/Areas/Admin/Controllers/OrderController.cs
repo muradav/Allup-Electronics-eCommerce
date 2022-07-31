@@ -29,7 +29,7 @@ namespace Allup.Areas.Admin.Controllers
 
             switch (status)
             {
-                case "New":
+                case "Pending":
                     order.OrderStatus = OrderStatus.Pending;
                     break;
                 case "Delivering":
