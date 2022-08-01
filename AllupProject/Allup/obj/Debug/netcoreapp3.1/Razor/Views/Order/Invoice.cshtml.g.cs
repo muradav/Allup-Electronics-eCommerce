@@ -41,7 +41,7 @@ using Allup.Helpers;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e54378525060e7be7719a8ecec0698f6cf936998", @"/Views/Order/Invoice.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d903f001546a169f1a970f38872d5cda5163192", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4acf5e4c7b3c697d982d9828277632184e3e171d", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Order_Invoice : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Order>
     #nullable disable

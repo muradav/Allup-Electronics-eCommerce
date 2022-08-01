@@ -99,7 +99,9 @@
                     <div class="row product-active">
                         @foreach (var item in Model.NewArrivals)
                         {
-                            <div class="col-lg-12">
+                            if (item.IsDeleted == false)
+                            {
+                                <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
                                         <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
@@ -127,6 +129,7 @@
                                     </div>
                                 </div> 
                             </div>
+                            }
                         }
                     </div> <!-- row -->
                 </div> <!-- product items -->
@@ -136,7 +139,9 @@
                     <div class="row product-active">
                         @foreach (var item in Model.BestSellers)
                         {
-                            <div class="col-lg-12">
+                            if(item.IsDeleted==false)
+                            {
+                                <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
                                         <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
@@ -164,6 +169,7 @@
                                     </div>
                                 </div>
                             </div>
+                            }
                         }
                     </div> <!-- row -->
                 </div> <!-- product items -->
@@ -173,7 +179,9 @@
                     <div class="row product-active">
                         @foreach (var item in Model.Featured)
                         {
-                            <div class="col-lg-12">
+                            if (item.IsDeleted==false)
+                            {
+                                <div class="col-lg-12">
                                 <div class="single-product mt-30">
                                     <div class="product-image">
                                         <a asp-controller="detail" asp-action="index" asp-route-id="@item.Id">
@@ -201,6 +209,7 @@
                                     </div>
                                 </div>
                             </div>
+                            }
                         }
                     </div> <!-- row -->
                 </div> <!-- product items -->

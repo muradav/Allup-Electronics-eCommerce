@@ -13,18 +13,14 @@
                         <ul class="menu-nav">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <li><a asp-controller="order" asp-action="orders">Welcome, @User.Identity.Name</a></li>
-                                <li><a asp-controller="account" asp-action="logout"> Logout</a></li>
-
                                 <li><a asp-controller="wishlist" asp-action="index"><i class="fal fa-heart"></i> Wishlist</a></li>
                                 <li>
                                     <div class="dropdown">
-                                        <button type="button" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting <i class="icon ion-chevron-down"></i></button>
+                                        <button type="button" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, @User.Identity.Name <i class="icon ion-chevron-down"></i></button>
 
                                         <ul class="dropdown-menu" aria-labelledby="setting">
-                                            <li><a href="my-account.html">My account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="login.html">Sign in</a></li>
+                                            <li><a asp-controller="order" asp-action="orders">Checkout</a></li>
+                                            <li><a asp-controller="account" asp-action="logout"> Logout</a></li>
                                         </ul>
                                     </div>
                                 </li>

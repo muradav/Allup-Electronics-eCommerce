@@ -33,7 +33,7 @@ namespace Allup.Areas.Admin.Controllers
             return View(products);
         }
 
-        #region Must be Used Later
+        #region Maybe Used Later
         //public IActionResult ActiveList()
         //{
         //    List<Product> products = _context.Products
@@ -173,6 +173,7 @@ namespace Allup.Areas.Admin.Controllers
                 CreatedAt = DateTime.Now,
                 Price = product.Price,
                 StockCount = product.StockCount,
+
             };
             List<ProductImage> productImages = new List<ProductImage>();
             ProductImage newproductImage = new ProductImage
